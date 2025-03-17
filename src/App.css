@@ -1,0 +1,201 @@
+/* App.css - Modern design with glow effects */
+@import url("./styles/Variables.css");
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background-dark);
+  color: var(--color-text);
+}
+
+/* App container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading screen */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  background-color: var(--color-background-dark);
+}
+
+/* Placeholder pages */
+.placeholder-page {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  background-color: var(--color-background-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--color-background-medium);
+  border-radius: var(--radius-lg);
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  background-color: var(--color-background-dark);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Main Container */
+.chat-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-background-dark);
+}
+
+/* Sidebar elements are now in Sidebar.css */
+
+/* Chat Area */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background-medium);
+  padding: 20px;
+  overflow-y: auto;
+  transition: all var(--transition-normal);
+}
+
+/* Messages Section */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-background-medium);
+}
+
+.messages-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-background-medium);
+}
+
+.messages-header h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* Settings Section */
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-background-medium);
+}
+
+.settings-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-background-medium);
+}
+
+.settings-header h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* Smooth Transitions */
+.page-enter {
+  transform: translateX(100%);
+}
+
+.page-enter-active {
+  transform: translateX(0);
+  transition: transform var(--transition-normal);
+}
+
+.page-exit {
+  transform: translateX(0);
+}
+
+.page-exit-active {
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    display: none;
+  }
+
+  .placeholder-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 18px;
+    color: var(--color-text-muted);
+  }
+}

@@ -1,0 +1,154 @@
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.auth-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.auth-form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-side-container {
+  flex: 1;
+  background: linear-gradient(135deg, #6d5bfc 0%, #5a41ea 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.auth-side-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.auth-side-container .logo {
+  color: #fff;
+}
+
+/* Instead of a separate curved divider, make the containers themselves curved */
+.auth-container:not(.reverse) .auth-form-container {
+  border-radius: 0;
+  position: relative;
+}
+
+.auth-container:not(.reverse) .auth-form-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8%;
+  width: 16%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  z-index: 2;
+}
+
+.auth-container.reverse .auth-form-container {
+  border-radius: 0;
+  position: relative;
+}
+
+.auth-container.reverse .auth-form-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8%;
+  width: 16%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  z-index: 2;
+}
+
+/* Remove the old curved divider */
+.curved-divider {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .auth-container.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .auth-form-container,
+  .auth-side-container {
+    flex: none;
+    width: 100%;
+    min-height: 50vh;
+    padding: 2rem 1.5rem;
+  }
+
+  /* Adjust for mobile - horizontal curve */
+  .auth-container:not(.reverse) .auth-form-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -8%;
+    width: 100%;
+    height: 16%;
+    background-color: #ffffff;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    z-index: 2;
+  }
+
+  .auth-container.reverse .auth-form-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8%;
+    width: 100%;
+    height: 16%;
+    background-color: #ffffff;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form-container,
+  .auth-side-container {
+    padding: 1.5rem 1rem;
+  }
+}

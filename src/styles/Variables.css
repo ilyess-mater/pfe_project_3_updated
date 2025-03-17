@@ -1,0 +1,50 @@
+/* Variables.css - Shared color scheme and design variables */
+:root {
+  /* Color Palette */
+  --color-background-dark: #121629;
+  --color-background-medium: #16213e;
+  --color-background-light: #1a1a2e;
+  --color-primary: #7f5af0;
+  --color-primary-light: #9f7afa;
+  --color-secondary: #e53170;
+  --color-text: #fffffe;
+  --color-text-muted: #94a1b2;
+  --color-border: #242582;
+
+  /* Shadows */
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --shadow-large: 0 6px 25px rgba(0, 0, 0, 0.3);
+
+  /* Glow Effects */
+  --glow-primary: 0 0 12px rgba(127, 90, 240, 0.3);
+  --glow-primary-strong: 0 0 15px rgba(127, 90, 240, 0.7);
+  --glow-secondary: 0 0 8px rgba(229, 49, 112, 0.3);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Media query helper variables */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+  }
+}

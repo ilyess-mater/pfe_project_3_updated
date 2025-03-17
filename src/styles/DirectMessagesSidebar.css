@@ -1,0 +1,175 @@
+/* DirectMessagesSidebar.css - Modern design with glow effects */
+.dm-sidebar {
+  width: 280px;
+  border-right: 1px solid #242582;
+  display: flex;
+  flex-direction: column;
+  background-color: #16213e;
+}
+
+.dm-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #242582;
+}
+
+.dm-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #fffffe;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch label {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #242582;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.toggle-switch label:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + label {
+  background-color: #7f5af0;
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.5);
+}
+
+.toggle-switch input:checked + label:before {
+  transform: translateX(18px);
+}
+
+.new-message-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #7f5af0;
+}
+
+.dm-search {
+  padding: 10px 15px;
+  position: relative;
+}
+
+.dm-search input {
+  width: 100%;
+  padding: 8px 10px;
+  padding-left: 30px;
+  border-radius: 15px;
+  border: 1px solid #242582;
+  background-color: #1a1a2e;
+  font-size: 14px;
+  color: #fffffe;
+}
+
+.dm-search .icon-search {
+  position: absolute;
+  left: 25px;
+  top: 19px;
+  color: #94a1b2;
+}
+
+.dm-contacts {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: relative;
+  color: #fffffe;
+}
+
+.contact-item:hover {
+  background-color: #1a1a2e;
+}
+
+.contact-item.active {
+  background-color: #242582;
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.3);
+}
+
+.contact-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #7f5af0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(127, 90, 240, 0.3);
+}
+
+.contact-name {
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+.unread-count {
+  background-color: #e53170;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-right: 8px;
+  box-shadow: 0 0 8px rgba(229, 49, 112, 0.3);
+}
+
+.contact-options {
+  color: #94a1b2;
+  visibility: hidden;
+}
+
+.contact-item:hover .contact-options {
+  visibility: visible;
+}
+
+.icon-search:before {
+  content: "🔍";
+}
+.icon-new-message:before {
+  content: "✏️";
+}
+.icon-more:before {
+  content: "⋯";
+}
