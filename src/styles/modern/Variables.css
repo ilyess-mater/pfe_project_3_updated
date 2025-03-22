@@ -1,0 +1,63 @@
+/* Modern color scheme variables - inspired by Yandex but with a fresh palette */
+:root {
+  /* Primary colors */
+  --color-primary: #3498db;         /* Main blue color */
+  --color-primary-light: #5dade2;   /* Lighter blue */
+  --color-primary-dark: #2980b9;    /* Darker blue */
+  
+  /* Secondary colors */
+  --color-accent: #e84393;          /* Pink accent */
+  --color-accent-light: #fd79a8;    /* Light pink */
+  --color-accent-dark: #c2185b;     /* Dark pink */
+  
+  /* Background colors */
+  --color-background-dark: #1a1a2e;  /* Dark blue/black */
+  --color-background-medium: #232342; /* Medium dark blue */
+  --color-background-light: #2a2a5e;  /* Light blue/dark */
+  
+  /* Text colors */
+  --color-text: #f0f0f0;           /* Main text color - light */
+  --color-text-muted: #a0a0a0;      /* Muted text */
+  --color-text-dark: #333;          /* Dark text for light backgrounds */
+  
+  /* Feedback colors */
+  --color-success: #00b894;         /* Success messages */
+  --color-warning: #fdcb6e;         /* Warning messages */
+  --color-danger: #e74c3c;          /* Error messages */
+  --color-info: #00cec9;            /* Information messages */
+  
+  /* Border colors */
+  --color-border: #34495e;          /* Border color */
+  --color-border-light: #4a6583;    /* Light border color */
+  
+  /* Shadow colors */
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  
+  /* Sizes and spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-round: 50%;
+  
+  /* Shadows */
+  --shadow-small: 0 2px 5px var(--color-shadow);
+  --shadow-medium: 0 4px 8px var(--color-shadow);
+  --shadow-large: 0 8px 16px var(--color-shadow);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Layout */
+  --header-height: 60px;
+  --footer-height: 50px;
+}

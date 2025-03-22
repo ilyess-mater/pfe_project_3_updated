@@ -69,7 +69,18 @@ const AuthService = {
 
   // Verify token
   verifyToken: async () => {
-    return apiRequest("/verify-token");
+    try {
+      // If no token exists in localStorage, don't even try to verify
+      const token = localStorage.getItem("authToken");
+      if (!token) {
+        throw new Error("No authentication token found");
+      }
+      return apiRequest("/verify-token");
+    } catch (error) {
+      console.error('Token verification failed:', error);
+      localStorage.removeItem("authToken");
+      throw error;
+    }
   },
 
   // Logout user

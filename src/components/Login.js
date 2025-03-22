@@ -23,7 +23,8 @@ const Login = () => {
     try {
       // Login using the AuthContext
       await login({ email, password });
-      navigate("/chat");
+      // Redirect to dashboard after successful login
+      navigate("/dashboard");
     } catch (error) {
       // Handle different error scenarios
       if (error.message === "Failed to fetch") {

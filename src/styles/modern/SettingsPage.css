@@ -1,0 +1,205 @@
+/* Import variables */
+@import url("../modern/Variables.css");
+
+/* Settings page layout */
+.settings-page {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.settings-container {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* Settings tabs */
+.settings-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.tab-button {
+  background-color: var(--color-background-medium);
+  border: none;
+  border-left: 3px solid transparent;
+  color: var(--color-text);
+  padding: var(--spacing-md);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 2px;
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+.tab-button:hover {
+  background-color: var(--color-background-light);
+}
+
+.tab-button.active {
+  background-color: var(--color-background-light);
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-primary-light);
+  font-weight: 500;
+}
+
+/* Settings content */
+.settings-content {
+  flex: 1;
+  min-width: 0;
+  padding: var(--spacing-lg);
+}
+
+/* Form styling */
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.form-control {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-background-dark);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-background-dark);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-select:focus {
+  border-color: var(--color-primary);
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.form-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Password requirements */
+.password-requirements {
+  background-color: var(--color-background-dark);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-md) 0;
+}
+
+.password-requirements h4 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.password-requirements ul {
+  margin-left: var(--spacing-lg);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.password-requirements li {
+  margin-bottom: 4px;
+}
+
+/* Save button */
+.save-button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: var(--spacing-md);
+  transition: background-color var(--transition-fast);
+}
+
+.save-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-container {
+    flex-direction: column;
+  }
+  
+  .settings-tabs {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .tab-button {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    white-space: nowrap;
+  }
+  
+  .tab-button.active {
+    border-left: none;
+    border-bottom: 3px solid var(--color-primary);
+  }
+}
+
+@media (max-width: 576px) {
+  .settings-content {
+    padding: var(--spacing-md);
+  }
+  
+  .save-button {
+    width: 100%;
+    align-self: center;
+  }
+}

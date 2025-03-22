@@ -2,9 +2,17 @@ import React, { useState, useEffect, createContext } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
-import MessagingLayout from "./components/MessagingLayout";
 import { AuthService } from "./services/api";
 import "./App.css";
+
+// Import modern components
+import {
+  ModernLayout,
+  HomePage,
+  MessagesPage,
+  ContactsPage,
+  SettingsPage
+} from "./components/modern";
 
 // Create authentication context that will be used throughout the app
 export const AuthContext = createContext();
@@ -68,23 +76,25 @@ function App() {
           {/* Public routes */}
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Navigate to="/signup" />} />
+          <Route path="/" element={<Navigate to={isAuthenticated ? "/dashboard" : "/signup"} />} />
           
-          {/* Protected route - only accessible when logged in */}
-          <Route 
-            path="/chat/*" 
-            element={
-              isAuthenticated ? 
-                <MessagingLayout /> : 
-                <Navigate to="/login" />
-            } 
-          />
+          {/* Protected routes */}
+          {isAuthenticated ? (
+            <>
+              <Route path="/dashboard" element={<ModernLayout><HomePage /></ModernLayout>} />
+              <Route path="/messages" element={<ModernLayout><MessagesPage /></ModernLayout>} />
+              <Route path="/contacts" element={<ModernLayout><ContactsPage /></ModernLayout>} />
+              <Route path="/settings" element={<ModernLayout><SettingsPage /></ModernLayout>} />
+            </>
+          ) : (
+            <Route path="/dashboard/*" element={<Navigate to="/login" />} />
+          )}
           
           {/* Redirect any other routes */}
           <Route
             path="*"
             element={
-              <Navigate to={isAuthenticated ? "/chat" : "/login"} />
+              <Navigate to={isAuthenticated ? "/dashboard" : "/login"} />
             }
           />
         </Routes>
